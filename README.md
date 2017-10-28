@@ -2,7 +2,8 @@ proxy_pool2
 
 > 代理池
 
-![效果截图](https://github.com/rainfd/proxy_pool2/screenshoot/index.png)
+![效果截图](https://github.com/rainfd/proxy_pool2/blob/master/screenshoot/index.png)
+
 
 ## 功能说明
 
@@ -30,7 +31,7 @@ json格式
     "location": "北京",
     "validate_time": "2017/01/01 00:00"
   }],
-  'total': 100
+  "total": 100
 }
 ```
 
