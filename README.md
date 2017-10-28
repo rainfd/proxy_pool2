@@ -2,7 +2,7 @@ proxy_pool2
 
 > 代理池
 
-![效果截图](https://github.com/rainfd/proxy_pool2/blob/master/screenshoot/index.png)
+[效果截图](https://github.com/rainfd/proxy_pool2/blob/master/screenshoot/index.png)
 
 
 ## 功能说明
