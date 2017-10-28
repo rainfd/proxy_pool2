@@ -13,8 +13,8 @@ proxy_pool2
 
 | 参数        | 是否必填 | 参数说明    | 取值说明       |
 | --------- | ---- | ------- | ---------- |
-| page      | 否    | 当前页数    | 默认为20      |
-| page_size | 否    | 每页条数    |            |
+| page      | 否    | 当前页数    |              |
+| page_size | 否    | 每页条数    | 默认为20      |
 | https     | 否    | 支持HTTPS | ture/false |
 | anonymous | 否    | 匿名      | true/false |
 
