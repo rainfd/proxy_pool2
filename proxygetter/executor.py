@@ -41,6 +41,7 @@ class ValidateRunner:
             logger.debug('proxy: {}'.format(proxy))
             logger.debug('Update/Save a proxy')
         else:
+            logger.debug(proxy)
             proxydb.delete(proxy)
             logger.debug('Delete a proxy')
 
@@ -62,9 +63,12 @@ class CrawlRunner:
         # thread_workers = setting.THREAD_WORKERS
 
         def worker(spider, interval):
-            sp = spider(interval)
-            for proxy in sp.get_proxy():
-                proxy_queue.put(proxy)
+            try:
+                sp = spider(interval)
+                for proxy in sp.get_proxy():
+                    proxy_queue.put(proxy)
+            except Exception:
+                pass
 
         for spider, interval in self._spider_modules.items():
             worker(spider, interval)

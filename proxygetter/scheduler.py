@@ -10,12 +10,13 @@ from proxygetter.executor import ValidateRunner, CrawlRunner
 
 
 scheduler = BlockingScheduler()
+# scheduler = BackgroundScheduler()
 
 crawl = CrawlRunner()
 validate = ValidateRunner()
 
 scheduler.add_job(crawl.start, 'interval', seconds=setting.SPIDER_INTERVAL)
-scheduler.add_job(validate.start, 'interval', seconds=setting.VALIDATE_INTERVAL, max_instances=20)
+scheduler.add_job(validate.start, 'interval', seconds=setting.VALIDATE_INTERVAL, max_instances=30)
 scheduler.add_job(validate.add_task, 'interval', seconds=setting.VALIDATE_ADD_INTERVAL)
 # job = scheduler.add_job(lambda: print('TEST!!'), 'interval', seconds=5)
 

@@ -3,7 +3,7 @@
 SPIDER_MODULES = {
     # spider_name: interval
     'coderbusy.CoderBusy': 1,
-    'kuaidaili.KDLSpider': 1,
+    # 'kuaidaili.KDLSpider': 1,
 }
 
 # 1 hour

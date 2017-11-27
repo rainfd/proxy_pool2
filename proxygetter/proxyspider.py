@@ -49,6 +49,8 @@ class ProxySpider(metaclass=DataClass):
         """
         # time.sleep(cls._interval)
         response = requests.get(url, headers, proxies=proxies)
+        if response.status_code != 200:
+            return None
         tree = etree.HTML(response.text)
         return tree
 

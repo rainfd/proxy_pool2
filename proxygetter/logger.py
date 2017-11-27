@@ -1,7 +1,8 @@
 import logging
+import logging.handlers
 
 # create logger
-logging.basicConfig(filename='spider.log', filemode='a', level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger('proxy_spider')
 # logger.setLevel(logging.INFO)
 
@@ -18,3 +19,11 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 ch.setFormatter(formatter)
 
 logger.addHandler(ch)
+
+fh = logging.handlers.TimedRotatingFileHandler(
+    './logs/proxy_spider', 'S', 1, 30, encoding='utf-8', utc=True)
+fh.suffix = "%Y%m%d.log"
+
+fh.setFormatter(formatter)
+
+logger.addHandler(fh)
